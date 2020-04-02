@@ -24,14 +24,8 @@ function fish_prompt
   set -l cwd $cyan(basename (prompt_pwd))
 
   if [ (_git_branch_name) ]
-
-    if test (_git_branch_name) = 'master'
-      set -l git_branch (_git_branch_name)
-      set git_info "$normal ($red$git_branch$normal)"
-    else
-      set -l git_branch (_git_branch_name)
-      set git_info "$normal ($purple$git_branch$normal)"
-    end
+    set -l git_branch $red(_git_branch_name)
+    set git_info "$blue git:($git_branch$blue)"
 
     if [ (_is_git_dirty) ]
       set -l dirty "$yellow ✗"
