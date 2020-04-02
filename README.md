@@ -16,7 +16,7 @@ A custom theme for Oh-My-Fish, a popular framework for the infamous fish shell.
 
 - In a fish_prompt, type the following:
 
-`
+```
 > omf install https://github.com/scottzach1/dracula-theme-omf.git
 > omf theme dracula-theme-omf
-`
+```
