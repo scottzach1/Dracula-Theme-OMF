@@ -31,7 +31,8 @@ function fish_prompt
 
   # Set git info
   if [ (_git_branch_name) ]
-    set git_info "$cyan ($_git_branch_name)"
+    set -l git_branch (_git_branch_name)
+    set git_info "$cyan ($_git_branch)"
 
     if [ (_is_git_dirty) ]
       set git_info "$git_info $yellow✗"
