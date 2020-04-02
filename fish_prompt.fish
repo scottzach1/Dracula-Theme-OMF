@@ -34,9 +34,9 @@ function fish_prompt()
     set git_info "$cyan ($_git_branch_name)"
 
     if [ (_is_git_dirty) ]
-      set git_info "$git_info$yellow ✗ "
+      set git_info "$git_info $yellow✗"
     else
-      set git_info "$git_info$green ✔︎ "
+      set git_info "$git_info $green✔︎"
     end
   end
 
