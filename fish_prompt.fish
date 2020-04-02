@@ -1,51 +1,46 @@
-# name: scottzach1
+# name: RobbyRussel
 #
+# You can override some default options in your config.fish:
+#   set -g theme_display_git_untracked no
 
 function _git_branch_name
   echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
 end
 
 function _is_git_dirty
-  echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
+  set -l show_untracked (git config --bool bash.showUntrackedFiles)
+  set untracked ''
+  if [ "$theme_display_git_untracked" = 'no' -o "$show_untracked" = 'false' ]
+    set untracked '--untracked-files=no'
+  end
+  echo (command git status -s --ignore-submodules=dirty $untracked 2> /dev/null)
 end
 
 function fish_prompt
-  # Set variables
   set -l last_status $status
   set -l cyan (set_color -o cyan)
   set -l yellow (set_color -o yellow)
   set -l red (set_color -o red)
-  set -l purple (set_color -o purple)
+  set -l blue (set_color -o blue)
   set -l green (set_color -o green)
   set -l normal (set_color normal)
 
-  # Set status arrow
   if test $last_status = 0
-    set arrow "$green➜ "
+      set arrow "$green➜ "
   else
-    set arrow "$red➜ "
+      set arrow "$red➜ "
   end
+  set -l cwd $cyan(basename (prompt_pwd))
 
-  # Set current working directory
-  set -l cwd $purple(basename (prompt_pwd))
-
-  # Set git info
   if [ (_git_branch_name) ]
-    set -l git_branch (_git_branch_name)
-    set git_info "$cyan ($_git_branch)"
+    set -l git_branch $red(_git_branch_name)
+    set git_info "$blue git:($git_branch$blue)"
 
     if [ (_is_git_dirty) ]
-      set git_info "$git_info $yellow✗"
-    else
-      set git_info "$git_info $green✔︎"
+      set -l dirty "$yellow ✗"
+      set git_info "$git_info$dirty"
     end
   end
 
-  # Notify if a command took more than 5 minutes
-  if [ "$CMD_DURATION" -gt 300000 ]
-    echo The last command took (math "$CMD_DURATION/1000") seconds.
-  end
-
-  # Output to console
   echo -n -s $arrow ' ' $cwd $git_info $normal ' '
 end
