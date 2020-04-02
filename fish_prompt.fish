@@ -9,7 +9,7 @@ function _is_git_dirty
   echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
 end
 
-function fish_prompt()
+function fish_prompt
   # Set variables
   set -l last_status $status
   set -l cyan (set_color -o cyan)
@@ -47,5 +47,4 @@ function fish_prompt()
 
   # Output to console
   echo -n -s $arrow ' ' $cwd $git_info $normal ' '
-
 end
