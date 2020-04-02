@@ -17,16 +17,17 @@ A custom theme for [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish), a pop
 - A terminal that can display icons.
 - [fish shell](https://fishshell.com/) running.
 - [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish) framework installed.
+- Note! For best experience, first install [dracula for fish](3~https://draculatheme.com/fish).
 
 ## Installation Instructions
 
-- In a fish_prompt, type the following:
+- In a fish pprompt, type the following:
 
 ```
 > omf install https://github.com/scottzach1/dracula-theme-omf.git
 > omf theme dracula-theme-omf
 ```
 
-## Authoor 
+## Author 
 
 - Zac Scott
