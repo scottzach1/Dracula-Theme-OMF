@@ -17,7 +17,7 @@ A custom theme for [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish), a pop
 - A terminal that can display icons.
 - [fish shell](https://fishshell.com/) running.
 - [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish) framework installed.
-- Note! For best experience, first install [dracula for fish](3~https://draculatheme.com/fish).
+- Note! For best experience, first install [dracula for fish](https://draculatheme.com/fish).
 
 ## Installation Instructions
 
