@@ -8,6 +8,7 @@ function _is_git_dirty
 end
 
 function fish_prompt
+  # Set variables and colors
   set -l last_status $status
   set -l cyan (set_color -o cyan)
   set -l yellow (set_color -o yellow)
@@ -15,14 +16,15 @@ function fish_prompt
   set -l purple (set_color -o blue)
   set -l green (set_color -o green)
   set -l normal (set_color normal)
-
+  # Set status arrow
   if test $last_status = 0
-    set arrow "$green➜ "
+    set arrow "$green➜  "
   else
-    set arrow "$red➜ "
+    set arrow "$red➜  "
   end
+  # Set current working directory
   set -l cwd $purple(basename (prompt_pwd))
-
+  # Set git info
   if [ (_git_branch_name) ]
     set -l git_branch $cyan(_git_branch_name)
     set git_info "$cyan ($git_branch)"
@@ -33,11 +35,10 @@ function fish_prompt
       set git_info "$git_info$green ✔︎"
     end
   end
-
   # Notify if a command took more than 5 minutes
   if [ "$CMD_DURATION" -gt 300000 ]
     echo The last command took (math "$CMD_DURATION/1000") seconds.
   end
-
+  # Output to console
   echo -n -s $arrow $cwd $git_info $normal ' '
 end
