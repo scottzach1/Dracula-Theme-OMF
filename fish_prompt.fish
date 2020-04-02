@@ -18,16 +18,16 @@ function fish_prompt
   set -l normal (set_color normal)
   # Set status arrow
   if test $last_status = 0
-    set arrow "$green➜  "
+    set arrow "$green➜ "
   else
-    set arrow "$red➜  "
+    set arrow "$red➜ "
   end
   # Set current working directory
   set -l cwd $purple(basename (prompt_pwd))
   # Set git info
   if [ (_git_branch_name) ]
     set -l git_branch $cyan(_git_branch_name)
-    set git_info "$cyan ($git_branch)"
+    set git_info "$cyan($git_branch)"
 
     if [ (_is_git_dirty) ]
       set git_info "$git_info$yellow ✗"
