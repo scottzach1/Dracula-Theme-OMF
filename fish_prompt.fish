@@ -30,7 +30,7 @@ function fish_prompt
     if [ (_is_git_dirty) ]
       set git_info "$git_info$yellow ✗"
     else
-      set git_info "$git_info$green✔︎ "
+      set git_info "$git_info$green ✔︎"
     end
   end
 
