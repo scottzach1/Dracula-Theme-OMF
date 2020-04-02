@@ -21,11 +21,11 @@ function fish_prompt
   else
     set arrow "$red➜ "
   end
-  set -l cwd $cyan(basename (prompt_pwd))
+  set -l cwd $purple(basename (prompt_pwd))
 
   if [ (_git_branch_name) ]
-    set -l git_branch $red(_git_branch_name)
-    set git_info "$blue git:($git_branch$blue)"
+    set -l git_branch $cyan(_git_branch_name)
+    set git_info "$cyan ($git_branch)"
 
     if [ (_is_git_dirty) ]
       set -l dirty "$yellow ✗"
