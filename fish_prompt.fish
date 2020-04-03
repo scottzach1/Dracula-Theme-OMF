@@ -10,11 +10,11 @@ end
 function fish_prompt
   # Set variables and colors
   set -l last_status $status
-  set -l cyan (set_color -o cyan)
-  set -l yellow (set_color -o yellow)
-  set -l red (set_color -o red)
-  set -l purple (set_color -o blue)
-  set -l green (set_color -o green)
+  set -l cyan (set_color 8be9fd)
+  set -l yellow (set_color f1fa8c)
+  set -l red (set_color ff5555)
+  set -l purple (set_color bd93f9)
+  set -l green (set_color 50fa7b)
   set -l normal (set_color normal)
   # Set status arrow
   if test $last_status = 0
