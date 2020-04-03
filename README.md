@@ -1,4 +1,4 @@
-# dracula-theme-omf
+# dracula-theme-omf (unofficial)
 
 Based on the [eclm](https://github.com/oh-my-fish/theme-eclm) and [robbyrussell](https://github.com/oh-my-fish/theme-robbyrussell) theme inspired by [dracula](https://draculatheme.com/) colour scheme.
 
