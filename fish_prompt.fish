@@ -1,4 +1,18 @@
-# name: dracula
+# name: dracula-theme-omf
+#                 _   _                 _     _
+#   ___  ___ ___ | |_| |_ ______ _  ___| |__ / |
+#  / __|/ __/ _ \| __| __|_  / _` |/ __| '_ \| |
+#  \__ \ (_| (_) | |_| |_ / / (_| | (__| | | | |
+#  |___/\___\___/ \__|\__/___\__,_|\___|_| |_|_|
+#
+#       Zac Scott (github.com/scottzach1)
+#
+#  A theme for oh-my-fish, inspired by the dracula color theme.
+#
+#  Based on the eclm and robbyrussel omf themes.
+#
+#  fish_prompt.fish
+
 function _git_branch_name
   echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
 end
