@@ -21,7 +21,7 @@ A custom theme for [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish), a pop
 
 ## Installation Instructions
 
-- In a fish pprompt, type the following:
+- In a fish prompt, type the following:
 
 ```
 > omf install https://github.com/scottzach1/dracula-theme-omf.git
